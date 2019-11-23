@@ -1,7 +1,18 @@
 .App {
   text-align: center;
 }
-
+    
+.navheader{      
+  margin-top: 10px;      
+  color :black !important;      
+  background-color: #b3beca!important      
+}    
+.PageHeading      
+{      
+  margin-top: 10px;      
+  margin-bottom: 10px;      
+  color :black !important;      
+}
 .Main-content{
 	border: 1px solid #eee;
 	width: 60%;
@@ -9,6 +20,41 @@
 	justify-content: center;
 }
 
+.Form-content input{
+	display: block;
+	margin: 10px auto 10px auto;
+	width: 60%;
+	height: 35px;
+	border: 1px solid #eee;
+	border-radius: 5px;
+	font-size:18px;
+}
+.Form-content h1{
+	height:35px;
+	margin: 0 auto 30px auto;
+	background: #aaaaaa;
+	border-radius: 5px;
+	color:#ffffff;
+	text-align: center;
+	padding:0;
+	font-size: 20px;
+}
+.Form-content button{
+	display: block;
+	margin: 10px auto 10px auto;
+	width: 60%;
+	height: 35px;
+	border-radius: 5px;
+	background: #6699ff;
+	color:#ffffff;
+	font-size:18px;
+}
+.Form-content{
+	border: 1px solid #eee;
+	width: 30%;
+	margin: auto;
+	justify-content: center;
+}
 .Inner-content{
 	border: 1px solid #eee;
 	width: 50%;

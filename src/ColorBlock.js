@@ -23,7 +23,7 @@ class ColoredBlock extends React.Component {
   }
   render() {
     return (
-      <div style={{height: '200px', width: '200px', backgroundColor: this.state.color }}>
+      <div className="Inner-content" style={{height: '200px', width: '200px', backgroundColor: this.state.color }}>
         <ChangeColorButton clickHandler = {this.changeColor} currentColor={this.state.color} ></ChangeColorButton>
       </div>
     )

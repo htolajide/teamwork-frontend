@@ -8,8 +8,8 @@ class App extends Component {
     return (
       <div className="App">
         <header><h1>My React App</h1></header>
-        <div className="main-content">
-          <ColorBlock />
+        <div className="Main-content">
+          <ColorBlock className="Inner-content" />
         </div>
         <footer>...</footer>
       </div>

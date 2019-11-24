@@ -54,6 +54,15 @@
 	font-size:18px;
 	color: #000000;
 }
+.Form-content textarea{
+	display: block;
+	margin: 10px auto 10px auto;
+	width: 60%;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	font-size:18px;
+	color: #000000;
+}
 
 .Form-content select{
 	display: block;

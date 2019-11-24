@@ -7,22 +7,22 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 function App() {  
   return (  
     <Router>    
-      <div className="container">    
-        <nav className="navbar navbar-expand-lg navheader">    
-          <div className="collapse navbar-collapse" >    
-            <ul className="navbar-nav mr-auto">    
-              <li className="nav-item">    
+      <div className="container">       
+          <div className="navbar" > 
+			<h2>Capstone Teamwork</h2>		  
+            <ul>  
+              <li>    
                 <Link to={'/Login'} className="nav-link">Login</Link>    
               </li>    
-              <li className="nav-item">    
-                <Link to={'/Signup'} className="nav-link">Sign Up</Link>    
+              <li>    
+                <Link to={'/Register'} className="nav-link">Register</Link>    
               </li>    
             </ul>    
           </div>    
-        </nav> <br />    
+			<br />    
         <Switch>    
           <Route exact path='/Login' component={Login} />    
-          <Route path='/Signup' component={Register} />    
+          <Route path='/Register' component={Register} />    
         </Switch>    
         <Switch>  
         <Route path='/Dashboard' component={Dashboard} />    

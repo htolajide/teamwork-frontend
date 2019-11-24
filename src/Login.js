@@ -37,7 +37,7 @@ class Login extends Component {
                     alert('Invalid User');
                 else
                     this.props.history.push("/Dashboard");
-            })
+            }).catch( (error) => {console.log(error)})
     }
     render() {
         return (

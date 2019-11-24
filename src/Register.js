@@ -42,6 +42,7 @@ class Register extends Component {
   }
   gender(event) {
     this.setState({ gender: event.target.value })
+	console.log(event.target.value);
   }
   register(event) {
     fetch('https://capstone-teamwork-api.herokuapp.com/api/v1/auth/create-user', {
@@ -60,13 +61,10 @@ class Register extends Component {
         department: this.state.department
       })
     }).then((Response) => Response.json())
-      .then((Result) => {
-        if (Result.Status === 'Success')
-                this.props.history.push("/Dashboard");
-        else
-          alert('Sorrrrrry !!!! Un-authenticated User !!!!!')
+      .then((Result) => { 
+          alert('User registered successfully')
       })
-	  .catch((error) => { console.log(error)})
+	  .catch((error) => { console.log(error)});
   }
   render() {
     return (
@@ -79,10 +77,10 @@ class Register extends Component {
             <Input type="password"  onChange={this.password} placeholder="Password" />
             <Input type="text"  onChange={this.jobRole} placeholder="JobRole" />
             <Input type="text"  onChange={this.department} placeholder="Department" />
-			<select onSubmit={this.gender} >
-				<option>Select Gender</option>
-				<option value="Male" >Male</option>
-				<option value="Female" >Female</option>
+			<select onChange={this.gender} >
+				<option >Select Gender</option>
+				<option value="Male">Male</option>
+				<option value="Female">Female</option>
 			</select>
             <Button  onClick={this.register}  color="success" block>Create Account</Button>
         </Form>        

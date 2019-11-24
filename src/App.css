@@ -2,17 +2,41 @@
   text-align: center;
 }
     
-.navheader{      
-  margin-top: 10px;      
-  color :black !important;      
-  background-color: #b3beca!important      
-}    
-.PageHeading      
-{      
-  margin-top: 10px;      
-  margin-bottom: 10px;      
-  color :black !important;      
+.navbar{      
+  margin: 0;      
+  color :#ffffff;      
+  background: #6699ff;  
+  width: 100%;
+  height: 50px;
+  font-size:24px;
+} 
+
+.nav-link{
+	text-decoration:none;
+	color:#ffffff;
 }
+.navbar ul { 
+  float: right;     
+  margin-top: 10px;      
+  list-style-type: none;
+    
+} 
+
+.navbar ul  li{      
+  margin: 0;
+  padding: 5px;
+  display: inline;
+  list-style-type: none;
+  border-left: 2px solid #cccccc;
+}  
+ 
+ .navbar h2 {
+	margin: 0; 
+	padding: 0;
+	float: left;
+	color: #ffffff;	
+}
+
 .Main-content{
 	border: 1px solid #eee;
 	width: 60%;
@@ -25,7 +49,7 @@
 	margin: 10px auto 10px auto;
 	width: 60%;
 	height: 35px;
-	border: 1px solid #eee;
+	border: 1px solid #ccc;
 	border-radius: 5px;
 	font-size:18px;
 	color: #000000;
@@ -36,7 +60,7 @@
 	margin: 10px auto 10px auto;
 	width: 60%;
 	height: 35px;
-	border: 1px solid #eee;
+	border: 1px solid #ccc;
 	border-radius: 5px;
 	font-size:18px;
 }
@@ -45,7 +69,6 @@
 	height:35px;
 	margin: 0 auto 30px auto;
 	background: #aaaaaa;
-	border-radius: 5px;
 	color:#ffffff;
 	text-align: center;
 	padding:0;
@@ -59,6 +82,7 @@
 	border-radius: 5px;
 	background: #6699ff;
 	color:#ffffff;
+	padding:0;
 	font-size:18px;
 }
 .Form-content{
@@ -66,6 +90,7 @@
 	width: 30%;
 	margin: auto;
 	justify-content: center;
+	border-radius: 5px;
 }
 .Inner-content{
 	border: 1px solid #eee;

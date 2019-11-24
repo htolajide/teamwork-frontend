@@ -3,8 +3,8 @@ import './App.css';
   class Dashboard extends Component {
     render() {
         return (
-            <div class="row" className="mb-2 pageheading">
-                <div class="col-sm-12 btn btn-primary">
+            <div className="mb-2 pageheading">
+                <div>
                     Dashboard 
              </div>
             </div>

@@ -28,7 +28,19 @@
 	border: 1px solid #eee;
 	border-radius: 5px;
 	font-size:18px;
+	color: #000000;
 }
+
+.Form-content select{
+	display: block;
+	margin: 10px auto 10px auto;
+	width: 60%;
+	height: 35px;
+	border: 1px solid #eee;
+	border-radius: 5px;
+	font-size:18px;
+}
+
 .Form-content h1{
 	height:35px;
 	margin: 0 auto 30px auto;

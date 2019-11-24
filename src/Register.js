@@ -1,37 +1,47 @@
 import React, { Component } from 'react';
-import { Button, Card, CardBody, Col, Container, Form, Input, InputGroup, Row } from 'reactstrap';
+import { Button, Form, Input } from 'reactstrap';
+import { select } from 'react-select';
 class Register extends Component {
   constructor() {
     super();
     this.state = {
-      EmployeeName: '',
-      City: '',
-      Email: '',
-      Password: '',
-      Department: ''
+      lastName: '',
+	  firstName: '',
+      jobRole: '',
+      email: '',
+      password: '',
+	  gender: '',
+      department: ''
     }
-    this.Email = this.Email.bind(this);
-    this.Password = this.Password.bind(this);
-    this.EmployeeName = this.EmployeeName.bind(this);
-    this.Password = this.Password.bind(this);
-    this.Department = this.Department.bind(this);
-    this.City = this.City.bind(this);
+    this.email = this.email.bind(this);
+    this.password = this.password.bind(this);
+    this.firstName = this.firstName.bind(this);
+    this.lastName = this.lastName.bind(this);
+    this.department = this.department.bind(this);
+	this.jobRole = this.jobRole.bind(this);
+	this.gender = this.gender.bind(this);
     this.register = this.register.bind(this);
   }
-  Email(event) {
-    this.setState({ Email: event.target.value })
+  email(event) {
+    this.setState({ email: event.target.value })
   }
-  Department(event) {
-    this.setState({ Department: event.target.value })
+  department(event) {
+    this.setState({ department: event.target.value })
   }
-  Password(event) {
-    this.setState({ Password: event.target.value })
+  password(event) {
+    this.setState({ password: event.target.value })
   }
-  City(event) {
-    this.setState({ City: event.target.value })
+  jobRole(event) {
+    this.setState({ jobRole: event.target.value })
   }
-  EmployeeName(event) {
-    this.setState({ EmployeeName: event.target.value })
+  firstName(event) {
+    this.setState({ firstName: event.target.value })
+  }
+  lastName(event) {
+    this.setState({ lastName: event.target.value })
+  }
+  gender(event) {
+    this.setState({ gender: event.target.value })
   }
   register(event) {
     fetch('https://capstone-teamwork-api.herokuapp.com/api/v1/auth/create-user', {
@@ -41,11 +51,13 @@ class Register extends Component {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        EmployeeName: this.state.EmployeeName,
-        Password: this.state.Password,
-        Email: this.state.Email,
-        City: this.state.City,
-        Department: this.state.Department
+        firstName: this.state.firstName,
+		lastName: this.state.lastName,
+        password: this.state.password,
+        email: this.state.email,
+		gender: this.state.gender,
+        jobRole: this.state.jobRole,
+        department: this.state.department
       })
     }).then((Response) => Response.json())
       .then((Result) => {
@@ -54,43 +66,26 @@ class Register extends Component {
         else
           alert('Sorrrrrry !!!! Un-authenticated User !!!!!')
       })
+	  .catch((error) => { console.log(error)})
   }
   render() {
     return (
-      <div className="app flex-row align-items-center">
-        <Container>
-          <Row className="justify-content-center">
-            <Col md="9" lg="7" xl="6">
-              <Card className="mx-4">
-                <CardBody className="p-4">
-                  <Form>
-                    <div class="row" className="mb-2 pageheading">
-                      <div class="col-sm-12 btn btn-primary">
-                        Sign Up
-                        </div>
-                    </div>
-                    <InputGroup className="mb-3">
-                      <Input type="text"  onChange={this.EmployeeName} placeholder="Enter Employee Name" />
-                    </InputGroup>
-                    <InputGroup className="mb-3">
-                      <Input type="text"  onChange={this.Email} placeholder="Enter Email" />
-                    </InputGroup>
-                    <InputGroup className="mb-3">
-                      <Input type="password"  onChange={this.Password} placeholder="Enter Password" />
-                    </InputGroup>
-                    <InputGroup className="mb-4">
-                      <Input type="text"  onChange={this.City} placeholder="Enter City" />
-                    </InputGroup>
-                    <InputGroup className="mb-4">
-                      <Input type="text"  onChange={this.Department} placeholder="Enter Department" />
-                    </InputGroup>
-                    <Button  onClick={this.register}  color="success" block>Create Account</Button>
-                  </Form>
-                </CardBody>
-              </Card>
-            </Col>
-          </Row>
-        </Container>
+      <div className="Form-content">
+        <Form>
+			<h1>Register User</h1>
+            <Input type="text"  onChange={this.firstName} placeholder="FirstName" />
+			<Input type="text"  onChange={this.lastName} placeholder="LastName" />
+            <Input type="text"  onChange={this.email} placeholder="Email" />
+            <Input type="password"  onChange={this.password} placeholder="Password" />
+            <Input type="text"  onChange={this.jobRole} placeholder="JobRole" />
+            <Input type="text"  onChange={this.department} placeholder="Department" />
+			<select onSubmit={this.gender} >
+				<option>Select Gender</option>
+				<option value="Male" >Male</option>
+				<option value="Female" >Female</option>
+			</select>
+            <Button  onClick={this.register}  color="success" block>Create Account</Button>
+        </Form>        
       </div>
     );
   }
